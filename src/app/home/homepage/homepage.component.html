@@ -1,2 +1,42 @@
-<p>homepage works!</p>
-<button routerLink="/book/doctorBooking">Chick Here</button>
+<div class="specialist-container" >
+   
+    <h2>Specialist Categories</h2>
+  
+    <!-- Flexbox container to arrange items as cards -->
+    <div class="specialist-cards">
+      <div class="specialist-card" *ngFor="let specialist of [
+          {category: 'Cardiologists', description: 'Heart and blood vessel specialists',  availableTime: 'Mon-Fri, 9am-5pm'
+          },
+          {category: 'Audiologists', description: 'Hearing and balance disorders', image: 'audiologist.jpg', availableTime: 'Mon-Wed, 10am-3pm'},
+          {category: 'Dentists', description: 'Dental care experts', image: 'dentist.jpg', availableTime: 'Tue-Thu, 9am-4pm'},
+          {category: 'ENT Specialists', description: 'Ear, nose, and throat specialists', image: 'ent.jpg', availableTime: 'Mon-Fri, 9am-6pm'},
+          {category: 'Gynecologists', description: 'Women’s reproductive health experts', image: 'gynecologist.jpg', availableTime: 'Mon-Sat, 8am-5pm'},
+          {category: 'Orthopedic Surgeons', description: 'Bone and joint specialists', image: 'orthopedic.jpg', availableTime: 'Wed-Fri, 10am-6pm'},
+          {category: 'Pediatricians', description: 'Child health specialists', image: 'pediatrician.jpg', availableTime: 'Mon-Fri, 9am-5pm'},
+          {category: 'Psychiatrists', description: 'Mental health experts', image: 'psychiatrist.jpg', availableTime: 'Tue-Fri, 11am-4pm'},
+          {category: 'Veterinarians', description: 'Animal health specialists', image: 'veterinarian.jpg', availableTime: 'Mon-Sat, 8am-6pm'},
+          {category: 'Radiologists', description: 'Medical imaging experts', image: 'radiologist.jpg', availableTime: 'Mon-Thu, 9am-5pm'},
+          {category: 'Pulmonologists', description: 'Lung and respiratory system specialists', image: 'pulmonologist.jpg', availableTime: 'Mon-Fri, 9am-5pm'},
+          {category: 'Endocrinologists', description: 'Hormone and gland specialists', image: 'endocrinologist.jpg', availableTime: 'Mon-Wed, 10am-4pm'},
+          {category: 'Oncologists', description: 'Cancer treatment specialists', image: 'oncologist.jpg', availableTime: 'Mon-Sat, 9am-5pm'},
+          {category: 'Neurologists', description: 'Nervous system specialists', image: 'neurologist.jpg', availableTime: 'Mon-Thu, 9am-3pm'},
+          {category: 'Cardiothoracic Surgeons', description: 'Heart and lung surgery specialists', image: 'cardiothoracic.jpg', availableTime: 'Mon-Fri, 8am-4pm'}
+        ]">
+        
+        <div class="card-content">
+          <!-- Image for the specialist -->
+          <!-- <img [src]="'assets/images' + specialist.image" alt="{{ specialist.category }}" class="gg"> -->
+  
+          <!-- Specialist Category and Description -->
+          <h3>{{ specialist.category }}</h3>
+          <p>{{ specialist.description }}</p>
+  
+          <!-- Available time -->
+          <p><strong>Available Time:</strong> {{ specialist.availableTime }}</p>
+  
+          <!-- Book Now Button -->
+          <button class="btn btn-success" routerLink="/books/doctorBooking">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>

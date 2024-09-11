@@ -1,0 +1,108 @@
+/* Make sure the body and html cover the entire viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Prevent scrolling if background image is larger than viewport */
+}
+
+/* Set up the background image for the entire page */
+body {
+  background: url('../../../assets/images/Healthcare-Hero.webp')
+  no-repeat center center fixed;
+  background-size: cover; /* Cover the entire viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13%;
+}
+
+/* Container styling */
+.container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Header styling */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input group styling */
+.input-group {
+  margin-bottom: 15px;
+}
+
+/* Label styling */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Input focus styling */
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+/* Button styling */
+button.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #4507ff;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 10px;
+}
+
+button.btn:hover {
+  background-color: #13a1e9;
+}
+
+/* Signup link styling */
+.signup-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}

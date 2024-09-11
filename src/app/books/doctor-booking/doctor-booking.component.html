@@ -1,0 +1,68 @@
+<body class="i">
+<div class="form-container">
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+      <h2>Doctor Appointment Booking</h2>
+  
+    
+      <div class="form-group">
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" formControlName="patientName" placeholder="Enter your name">
+        <div *ngIf="bookingForm.controls['patientName'].touched && bookingForm.controls['patientName'].invalid">
+          <small *ngIf="bookingForm.controls['patientName'].errors?.['required']">Name is required.</small>
+          <small *ngIf="bookingForm.controls['patientName'].errors?.['minlength']">Minimum 3 characters required.</small>
+        </div>
+      </div>
+  
+    
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter your email">
+        <div *ngIf="bookingForm.controls['email'].touched && bookingForm.controls['email'].invalid">
+          <small *ngIf="bookingForm.controls['email'].errors?.['required']">Email is required.</small>
+          <small *ngIf="bookingForm.controls['email'].errors?.['email']">Please enter a valid email.</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" formControlName="phone" placeholder="Enter your phone number">
+        <div *ngIf="bookingForm.controls['phone'].touched && bookingForm.controls['phone'].invalid">
+          <small *ngIf="bookingForm.controls['phone'].errors?.['required']">Phone number is required.</small>
+          <small *ngIf="bookingForm.controls['phone'].errors?.['pattern']">Please enter a valid 10-digit phone number.</small>
+        </div>
+      </div>
+  
+   
+      <div class="form-group">
+        <label for="appointmentDate">Appointment Date:</label>
+        <input type="date" id="appointmentDate" formControlName="appointmentDate">
+        <div *ngIf="bookingForm.controls['appointmentDate'].touched && bookingForm.controls['appointmentDate'].invalid">
+          <small *ngIf="bookingForm.controls['appointmentDate'].errors?.['required']">Appointment date is required.</small>
+        </div>
+      </div>
+  
+    
+      <div class="form-group">
+        <label for="doctor">Select Doctor:</label>
+        <select id="doctor" formControlName="doctor">
+          <option value="" disabled>Select a doctor</option>
+          <option *ngFor="let doctor of doctors" [value]="doctor">{{ doctor }}</option>
+        </select>
+        <div *ngIf="bookingForm.controls['doctor'].touched && bookingForm.controls['doctor'].invalid">
+          <small *ngIf="bookingForm.controls['doctor'].errors?.['required']">Please select a doctor.</small>
+        </div>
+      </div>
+  
+      
+      <div class="form-group">
+        <label for="reason">Reason for Visit (Optional):</label>
+        <textarea id="reason" formControlName="reason" placeholder="Describe the reason for your visit"></textarea>
+      </div>
+  
+ 
+      <button routerLink="/books/comform" type="submit" [disabled]="bookingForm.invalid">Book Appointment</button>
+    </form>
+  </div>
+  
+  
+</body>

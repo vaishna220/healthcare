@@ -1,2 +1,49 @@
-<p>signup works!</p>
-<button routerLink="/home/homepage">Chick Here</button>
+<body class="i"> 
+    
+
+<div class="form-container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" formControlName="name" placeholder="Enter your name">
+            <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched" class="error">
+                <p>*Name is required.</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastname">Lastname:</label>
+            <input type="text" id="lastname" formControlName="lastname" placeholder="Enter your lastname">
+            <div *ngIf="myForm.get('lastname')?.invalid && myForm.get('lastname')?.touched" class="error">
+                <p>*Lastname is required.</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" formControlName="email" placeholder="Enter your email">
+            <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched" class="error">
+                <p>*Valid email is required.</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" formControlName="password" placeholder="Enter your password">
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm your password">
+        </div>
+
+        <button class="btn btn-warning"  routerLink="/auth/signin">signup</button>
+
+        <p class="signin-link" style="color: #000;">
+            Already have an account? <a routerLink="/auth/signin">Sign In</a>
+        </p>
+    </form>
+   </div>
+</body>
+
+
+
